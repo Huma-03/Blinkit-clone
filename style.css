@@ -81,12 +81,21 @@ header .container {
   color: var(--color-black);
 }
 
-.login {
+.login{
   font-size: 11px;
-  color: var(--color-grey);
+  padding: 10px;
+  color: var(--color-white);
   cursor: pointer;
 }
-
+.login a {
+  color:var(--color-grey);
+  text-decoration: none;
+  display: inline-block;
+  transition: font-size 0.3s;
+}
+.login a:hover{
+  transform:scale(1.2);
+}
 .cart button {
   padding: 10px;
   background-color: var(--color-green);
