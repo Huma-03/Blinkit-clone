@@ -1,4 +1,9 @@
 @import url("./variable.css");
+:root{
+  --modal-duration: 1s;
+  --primary-color: #30336b;
+  --secondary-color: #be2edd;
+}
 
 * {
   margin: 0;
@@ -11,7 +16,7 @@
 header .container {
   display: flex;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   width: 100%;
   height: 67px;
@@ -84,7 +89,7 @@ header .container {
 .login{
   font-size: 11px;
   padding: 10px;
-  color: var(--color-white);
+  color: var(--color-grey);
   cursor: pointer;
 }
 .login a {
@@ -326,4 +331,87 @@ and (-webkit-min-device-pixel-ratio: 3) {
   }
 }
 
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 500px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.img{
+     align-items:center;
+     display:flex;
+     justify-content: center;
+     margin-top:10px;
+}
+.modal-header {
+  padding: 15px;
+   margin-top: 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  display:flex;
+  justify-content: center;
+}
+
+.modal-content {
+  padding: 5px;
+}
+.modal-content p {
+  display:flex;
+  justify-content: center;
+}
+.modal-form div {
+  margin: 15px 5px;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+  padding: 8px;
+  width: 100%;
+}
+
+.close-btn {
+  background: transparent;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
